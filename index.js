@@ -1,6 +1,6 @@
 const express = require('express'); //importing express
 const cors = require('cors'); //importing cors
-const {getTasks} = require('./src/task'); //importing get Task
+const {getTasks, createTask} = require('./src/tasks'); //importing get Task
 const PORT = process.env.PORT || 3000; // conecting to port
 
 const app = express();   // intailizing express
@@ -9,9 +9,9 @@ app.use(express.json());  //Telling api to parce info as json
 
 
 //Routes
-// app.post('/tasks', createTask);   
-app.get('/task', getTasks);
-// app.patch('/task/:taskId', updateTask);
+app.post('/tasks', createTask);   
+app.get('/tasks', getTasks);
+app.patch('/task/:taskId', updateTask);
 
 
 app.listen(PORT, ()=> {          //connecting to port
