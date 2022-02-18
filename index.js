@@ -11,7 +11,7 @@ app.use(express.json());  //Telling api to parce info as json
 //Routes
 app.post('/tasks', createTask);   
 app.get('/tasks', getTasks);
-app.patch('/task/:taskId', updateTask);
+app.patch('/tasks/:taskId', updateTask);
 
 
 app.listen(PORT, ()=> {          //connecting to port
